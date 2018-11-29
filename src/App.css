@@ -1,32 +1,151 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Montserrat', sans-serif;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  background-color: #fff;
+  height: 100vh;
+  width: 100vw;
+  
+}
+.wrapper h1 {
+  /* font-size: 1.2em; */
+  color: #111;
+}
+.mainText{
+  opacity: 0;
+  animation: up;
+  animation-duration: 900ms;
+  animation-iteration-count: 1;
+}
+.hideUp{
+  opacity: 0;
+  animation: up;
+  animation-duration: 900ms;
+  animation-iteration-count: 1;
+}
+.questionHidden{
+  opacity: 0;
+  display: none;
+}
+.question{
+  opacity: 1;
+  animation: showUp;
+  animation-duration: 900ms;
+  animation-iteration-count: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.question span{
+  display: block;
+  font-size: .78em;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.question input{
+  border-width: 0px 0px 2px 0px;
+  border-color: #2980b9;
+  font-size: 2em;
+  outline-color: transparent;
+  outline-style: none;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+.question textarea{
+  border-width: 2px 2px 2px 2px;
+  border-color: #2980b9;
+  font-size: 1.5em;
+  outline-color: transparent;
+  outline-style: none;
+  /* text-align: center; */
+  margin-bottom: 20px; 
+}
+.hidden{
+  display: none;
+}
+.dropzone{
+  height: 200px;
+  width: 200px;
+  background-color: #ececec;
+  border-width: 10px;
+  border-style: dashed;
+  border-color: #c1c1c1;
+  margin-bottom:20px;
+}
+.action{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.action-button{
+  padding: 10px 20px 10px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #2980b9;
+  font-size: .77em;
+  color: #2980b9;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.action-button:hover{
+  
+  border-color:  #2980b9;
   color: white;
+  background-color:  #2980b9;
+}
+.hello{
+  opacity: 0;
+  animation: rollUp;
+  animation-duration: 2000ms;
+  /* animation-delay: 1500ms; */
+  animation-iteration-count: infinite;
+}
+@keyframes up {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  transform: translateY(-100px);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes rollUp {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes showUp {
+  0% {
+  opacity: 0;
+  transform: translateY(100px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+  opacity: 1;
+  
   }
 }
+
+
+
+
